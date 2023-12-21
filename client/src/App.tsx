@@ -1,6 +1,7 @@
 // src/App.tsx
 import React, { useState } from 'react';
 import TodoList from './TodoList';
+import './App.css';
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState([

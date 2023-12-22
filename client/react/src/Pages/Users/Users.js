@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Spinner } from 'react-bootstrap';
 import UserCard from "./UserCard";
+import UserList from "./UserList";
 
 export default function Users() {
     const [responseData, setResponseData] = useState({ data: [] });
@@ -31,10 +32,6 @@ export default function Users() {
         </Spinner>;
     }
     return (
-        <div class="row">
-            {responseData.data.map((user) => (
-                <UserCard key={user.email} user={user} />
-            ))}
-        </div>
+        <UserList users={responseData.data} />
     );
 }

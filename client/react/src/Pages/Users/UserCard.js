@@ -1,7 +1,7 @@
 import { memo } from "react";
 function UserCard(props) {
     return (
-        <div key={props.user.email} class="col-4">
+        <div class="col-4">
             <div class="card mb-12">
                 <div class="card-body">
                     <h5 class="card-title">{props.user.first_name} {props.user.last_name}</h5>

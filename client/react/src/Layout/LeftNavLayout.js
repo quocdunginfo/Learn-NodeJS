@@ -1,17 +1,13 @@
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import Home from '../Home/Home';
-import Login from '../Pages/Login/Login';
-import Users from '../Pages/Users/Users';
-import NotFound from '../Pages/NotFound/NotFound';
+import { Outlet, Link } from "react-router-dom";
 
 export default function LeftNavLayout(props) {
     const menuItems = [
         { text: "Login", link: '/login' },
         { text: "Logout", link: '/logout' },
+        { text: "Home", link: '/pages/home' },
         { text: "Users", link: '/pages/users' },
         { text: "Tasks", link: '/pages/tasks' }
     ];
@@ -34,7 +30,7 @@ export default function LeftNavLayout(props) {
                     </nav>
 
                     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                        {props.children}
+                        <Outlet />
                     </main>
                 </div>
             </div>

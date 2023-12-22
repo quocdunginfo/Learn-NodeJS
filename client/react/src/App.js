@@ -7,9 +7,13 @@ import LeftNavLayout from './Layout/LeftNavLayout';
 
 export default function App() {
   const headerText = 'Header text from App';
+  const menuItems = [
+    { text: "Login", link: '/login' },
+    { text: "Users", link: '/users' }
+  ];
   return (
     <>
-      <LeftNavLayout>
+      <LeftNavLayout menuItems={menuItems}>
         <Header headerText={headerText} />
         <Home />
         <Footer />

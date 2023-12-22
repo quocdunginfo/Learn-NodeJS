@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 export default function LeftNavLayout(props) {
     return (
         <>
@@ -6,11 +8,14 @@ export default function LeftNavLayout(props) {
                     <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                         <div class="sidebar-sticky">
                             <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">
-                                        Dashboard
-                                    </a>
-                                </li>
+                                {props.menuItems.map((item, index) => (
+                                    <li key={item.text} class="nav-item">
+                                        <a class="nav-link active" href={item.link}>
+                                            {item.text}
+                                        </a>
+                                    </li>
+                                ))}
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">
                                         Profile

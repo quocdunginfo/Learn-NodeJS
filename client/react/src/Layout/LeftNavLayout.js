@@ -20,9 +20,7 @@ export default function LeftNavLayout(props) {
                             <ul class="nav flex-column">
                                 {menuItems.map((item, index) => (
                                     <li key={item.text} class="nav-item">
-                                        <a class="nav-link" href={item.link}>
-                                            {item.text}
-                                        </a>
+                                        <Link className="nav-link" to={item.link}>{item.text}</Link>
                                     </li>
                                 ))}
                             </ul>
